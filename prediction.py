@@ -42,6 +42,8 @@ while True:
                 mqttc.publish(os.getenv("MQTT_TOPIC"), "helm-sign", 0, False)
             elif class_name == "nohelm":
                 mqttc.publish(os.getenv("MQTT_TOPIC"), "no-helm-sign", 0, False)
+            else:
+                mqttc.publish(os.getenv("MQTT_TOPIC"), "helm-sign", 0, False)
 
     cv2.imshow('frame', results[0].plot())
     if cv2.waitKey(1) & 0xFF == ord('q'):
